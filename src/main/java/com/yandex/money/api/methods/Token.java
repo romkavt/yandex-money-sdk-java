@@ -35,7 +35,7 @@ public class Token implements MethodResponse {
      * Constructor.
      *
      * @param accessToken access token itself
-     * @param error error code
+     * @param error       error code
      */
     public Token(String accessToken, Error error) {
         this.accessToken = accessToken;
@@ -48,6 +48,14 @@ public class Token implements MethodResponse {
 
     public Error getError() {
         return error;
+    }
+
+    @Override
+    public String toString() {
+        return "Token{" +
+                "access_token='" + accessToken + '\'' +
+                ", error=" + error +
+                '}';
     }
 
     /**
@@ -65,8 +73,8 @@ public class Token implements MethodResponse {
         /**
          * Constructor.
          *
-         * @param code temporary code
-         * @param clientId application's client id
+         * @param code        temporary code
+         * @param clientId    application's client id
          * @param redirectUri redirect uri
          */
         public Request(String code, String clientId, String redirectUri) {
@@ -76,9 +84,9 @@ public class Token implements MethodResponse {
         /**
          * Constructor.
          *
-         * @param code temporary code
-         * @param clientId application's client id
-         * @param redirectUri redirect uri
+         * @param code         temporary code
+         * @param clientId     application's client id
+         * @param redirectUri  redirect uri
          * @param clientSecret a secret word for verifying application's authenticity.
          */
         public Request(String code, String clientId, String redirectUri, String clientSecret) {

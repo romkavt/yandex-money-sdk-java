@@ -97,8 +97,9 @@ public class OAuth2Session extends AbstractSession {
      *
      * @param accessToken access token
      */
-    public void setAccessToken(String accessToken) {
+    public OAuth2Session setAccessToken(String accessToken) {
         this.accessToken = accessToken;
+        return this;
     }
 
     /**
